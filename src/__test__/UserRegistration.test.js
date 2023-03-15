@@ -84,20 +84,19 @@ describe("boundary", () => {
     });
     await waitFor(async () => {
       const emailError = screen.queryByText(/Invalid Email/i);
-      console.debug(emailError);
       expect(emailError).toBeNull();
     });
   });
 });
 
 describe("boundary", () => {
-  test("submit button disabled on invalid data", async () => {
+  test(testName + " submit button disabled on invalid data", async () => {
     const utils = render(<UserRegistrationForm />);
     expect(getById(utils.container, "submit")).toBeInTheDocument();
     expect(getById(utils.container, "submit")).toBeDisabled();
   });
 
-  test("submit button enabled on valued text", async () => {
+  test(testName + " submit button enabled on valued text", async () => {
     const utils = render(<UserRegistrationForm />);
     const { name, email, contact } = setup();
     await waitFor(() => {

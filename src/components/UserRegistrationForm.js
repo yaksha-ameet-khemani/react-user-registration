@@ -38,10 +38,6 @@ const UserRegistrationForm = () => {
     }
   };
 
-  //   if (!new RegExp(/^[0-9]{10}$/).test(e.target.value)) {
-  //     new RegExp(
-  //       /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-  //     ).test(e.target.value)
   const changeHandler = (e) => {
     setFormData((prev) => {
       return {
@@ -113,82 +109,83 @@ const UserRegistrationForm = () => {
             </td>
           </tr>
         </thead>
-
-        <table className="inner-table">
+        <tbody>
           <tr>
-            <td>*Name:</td>
             <td>
-              <input
-                type="text"
-                id="name"
-                onBlur={blurHandler}
-                onChange={changeHandler}
-                value={formData.name}
-              ></input>
-              <br />
-              {formError.name && (
-                <span className="email-error" name="name-error">
-                  Name is required
-                </span>
-              )}
+              <table className="inner-table">
+                <tbody>
+                  <tr>
+                    <td>*Name:</td>
+                    <td>
+                      <input
+                        type="text"
+                        id="name"
+                        onBlur={blurHandler}
+                        onChange={changeHandler}
+                        value={formData.name}
+                      ></input>
+                      <br />
+                      {formError.name && (
+                        <span className="email-error" name="name-error">
+                          Name is required
+                        </span>
+                      )}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>*Email:</td>
+                    <td>
+                      <input
+                        type="text"
+                        id="email"
+                        onBlur={blurHandler}
+                        onChange={changeHandler}
+                        value={formData.email}
+                      ></input>
+                      <br />
+                      {formError.email && (
+                        <span className="email-error" name="email-error">
+                          Invalid Email
+                        </span>
+                      )}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Contact:</td>
+                    <td>
+                      <input
+                        type="text"
+                        id="contact"
+                        onChange={changeHandler}
+                        value={formData.contact}
+                      ></input>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <input
+                                type="submit"
+                                name="submit"
+                                id="submit"
+                                value="Add User"
+                                disabled={invalidForm}
+                                onClick={submitHandler}
+                              />
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </td>
           </tr>
-          <tr>
-            {" "}
-            <td>&nbsp;</td>{" "}
-          </tr>
-          <tr>
-            <td>*Email:</td>
-            <td>
-              <input
-                type="text"
-                id="email"
-                onBlur={blurHandler}
-                onChange={changeHandler}
-                value={formData.email}
-              ></input>
-              <br />
-              {formError.email && (
-                <span className="email-error" name="email-error">
-                  Invalid Email
-                </span>
-              )}
-            </td>
-          </tr>
-          <tr>
-            {" "}
-            <td>&nbsp;</td>{" "}
-          </tr>
-          <tr>
-            <td>Contact:</td>
-            <td>
-              <input
-                type="text"
-                id="contact"
-                onChange={changeHandler}
-                value={formData.contact}
-              ></input>
-            </td>
-          </tr>
-          <tr>
-            {" "}
-            <td>&nbsp;</td>{" "}
-          </tr>
-          <table>
-            <tr>
-              <td>
-                <input
-                  type="submit"
-                  name="submit"
-                  id="submit"
-                  value="Add User"
-                  disabled={invalidForm}
-                  onClick={submitHandler}
-                />
-              </td>
-            </tr>
-          </table>
-        </table>
+        </tbody>
       </table>
     </>
   );

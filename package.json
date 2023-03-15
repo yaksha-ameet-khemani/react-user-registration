@@ -49,15 +49,14 @@
     "xmlbuilder": "^15.1.1"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "jest": "react-scripts test --detectOpenHandles",
     "test": "react-scripts test --detectOpenHandles --reporters=./custom-reporter.js",
     "test:cov": "npm test -- --coverage --watchAll=false",
     "test:debug": "react-scripts --inspect-brk test --runInBand",
     "eject": "react-scripts eject",
-    "changelog": "auto-changelog --starting-version 3.0.0 --commit-limit false --hide-credit",
-    "json-server": "json-server --watch data-source/users.json --port 3500"
+    "changelog": "auto-changelog --starting-version 3.0.0 --commit-limit false --hide-credit"
   },
   "eslintConfig": {
     "extends": "react-app"
