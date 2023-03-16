@@ -45,7 +45,7 @@ describe("boundary", () => {
       fireEvent.blur(firstName);
     });
     await waitFor(async () => {
-      expect(await screen.findByText(/Name is required/i)).toBeTruthy();
+      expect(await screen.findByText(/First Name is required/i)).toBeTruthy();
     });
   });
 
@@ -56,7 +56,7 @@ describe("boundary", () => {
       fireEvent.change(firstName, { target: { value: "temp firstName" } });
     });
     await waitFor(async () => {
-      const nameError = screen.queryByText(/Name is required./i);
+      const nameError = screen.queryByText(/First Name is required./i);
       expect(nameError).toBeNull();
     });
   });
@@ -139,7 +139,7 @@ describe("boundary", () => {
       fireEvent.change(designation, { target: { value: "temp designation" } });
     });
     await waitFor(async () => {
-      const designationError = screen.queryByText(/Department is required./i);
+      const designationError = screen.queryByText(/Designation is required./i);
       expect(designationError).toBeNull();
     });
   });
